@@ -1,0 +1,408 @@
+.bannerBgImage {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide any overflow */
+  background-image: url('../images/intro1.jpg'); /* Path to your background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+.bannerText {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better readability */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 3.5s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.bannerGreeting,
+.bannerName,
+.bannerDescription {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start position for animation */
+  animation-duration: 1s;
+  animation-fill-mode: both; /* Ensure styles apply before and after animation */
+}
+
+.bannerGreeting {
+  animation-name: fadeInUp;
+  animation-delay: 0.5s; /* Delay for staggered effect */
+}
+
+.bannerName {
+  animation-name: fadeInUp;
+  animation-delay: 1s; /* Delay for staggered effect */
+}
+
+.bannerDescription {
+  animation-name: fadeInUp;
+  animation-delay: 1.5s; /* Delay for staggered effect */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.divider {
+  width: 50%; /* Adjust width as needed */
+  border: 1px solid white;
+  margin: 1rem 0; /* Vertical spacing only */
+}
+
+.bannerDescription {
+  font-size: 2rem;
+  margin: 0;
+}
+
+
+
+
+
+    
+    
+
+#Internships {
+  background-image: url('../images/int1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure the section takes up the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove extra padding */
+  margin: 0; /* Remove default margin */
+  position: relative;
+  z-index: 0;
+}
+
+#Internships .container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay for better readability */
+  padding: 40px;
+  border-radius: 10px; /* Optional: Rounds the corners */
+}
+
+.Internship-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 150px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s, filter 0.3s;
+  margin-bottom: 1px; /* Space between cards */
+  margin-top: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.Internship-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.Internship-card .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.Internship-card:hover::before {
+  opacity: 0.9; /* Darken the background on hover */
+}
+
+.Internship-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: ease-in-out 0.3s, transform 0.3s;
+}
+
+.Internship-link:hover {
+  color: gold;
+  transform: scale(1.05);
+}
+
+.Internship-link i {
+  margin-right: 8px;
+  font-size: 1.3rem;
+}
+
+.divider {
+  border: none;
+  border-top: 4px solid beige;
+  margin: 30px 0;
+}  
+
+.card-tagline {
+  font-size: 1rem;
+  color: black;
+}
+
+#Internships h1 {
+  color: whitesmoke; /* Change the heading color to white */
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add text shadow for better readability */
+}
+
+  
+  
+/* Projects Section Styling */
+#Projects {
+  background-image: url('../images/p4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 0;
+}
+
+#Projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#Projects .container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Project Cards Grid */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures equal width */
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* Makes all cards same height */
+  padding: 20px 0;
+}
+
+/* Uniform Project Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 20px;
+  border: 2px solid whitesmoke;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensures uniform height */
+  min-height: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+}
+
+/* Card Content */
+.project-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1rem;
+  flex-grow: 1; /* Ensures content expands to fill space */
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+
+  .project-card {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+
+.project-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-color: whitesmoke;
+}
+
+.project-link {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.project-link:hover {
+  color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+
+.bIcon {
+  margin-right: 8px;
+  font-size: 1.3rem;
+}
+
+.divider {
+  border: 0;
+  border-top: 4px solid black;
+  margin: 10px 0;
+}
+
+.card-tagline {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+#Projects h1 {
+  color: whitesmoke; /* Change the heading color to white */
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+}
+
+
+    .card{
+        cursor: pointer;
+    }
+    .card:hover{
+        background-color: beige;
+        border: 2px solid #ffffff;
+    }
+    .footer {
+      position: fixed; /* Fixes the footer to the left side of the page */
+      left: 0;
+      top: 0; /* Aligns footer to the top of the page */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: transparent; /* No background */
+      padding: 0; /* Remove padding to eliminate extra space */
+      height: 100vh; /* Makes the footer full height */
+      justify-content: center; /* Centers icons vertically */
+    }
+    
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px; /* Width of the icon box */
+      height: 35px; /* Height of the icon box */
+      background: #fff; /* Background color of the icon box */
+      border-radius: 0; /* Square edges */
+      margin: 0; /* Remove spacing between icons */
+      text-decoration: none; /* Remove underline */
+      border: 2px solid transparent; /* Default border color */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+      position: relative; /* To position the border highlight */
+    }
+    
+    /* Specific icon border colors */
+    .icon-email {
+      color: black; /* Gmail color */
+      background: white; /* Remove background color to show icon color */
+      border-color: white; /* Border color same as icon color */
+    }
+    
+    .icon-github {
+      color: white; /* GitHub color */
+      background: darkslategrey; /* Remove background color to show icon color */
+      border-color: darkslategrey; /* Border color same as icon color */
+    }
+    
+    .icon-linkedin {
+      color: white; /* LinkedIn color */
+      background: #0077b5; /* Remove background color to show icon color */
+      border-color: #0077b5; /* Border color same as icon color */
+    }
+    
+    .footer-icon i {
+      font-size: 1.5rem; /* Icon size */
+    }
+    
+    
+    
+    
+
+    .img-fluid:hover{
+        border: 2px solid white;
+
+    }
+
+    .card-img-top{
+        height: 50vh;
+    }
+
+    .btn-primary {
+      background-color: black;
+      border-color: silver;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: beige;
+      border-color: rgb(28, 17, 17);
+    }
+    
+
+
+
+
+
+
+
